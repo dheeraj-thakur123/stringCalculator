@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f0f0f0; /* Optional background color */
+}
+.calc_heading{
+  margin-top: 0px;
+}
+
+.calc_result{
+  margin: 10px 0px 10px 0px;
+  height: 20px;
+}
+
+.calc_box {
+  text-align: center;
+  border: 1px solid #ccc; 
+  border-radius: 8px;
+  width: 30%;
+  height: 30%;
+  padding: 20px;
+}
+.input_box{
+  width:80%
+}
