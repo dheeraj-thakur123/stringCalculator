@@ -9,13 +9,25 @@ describe('App Component', () => {
       render(<App />);
 
       // Get the input and button elements
-      const input = screen.getByRole('textbox'); // This selects the input box
-      const button = screen.getByRole('button', { name: /add/i }); // This selects the button
+      const input = screen.getByRole('textbox'); 
+      const button = screen.getByRole('button', { name: /add/i });
 
-      // Simulate clicking the button without entering any input
+      // click event
       fireEvent.click(button);
 
-      // Assert that the result displays 0
+      // result display 0
       expect(screen.getByText(/0/i)).toBeInTheDocument();
   });
+
+  test('calculates the sum when user enters "1,2,3" and clicks add', () => {
+    render(<App />);
+    const input = screen.getByRole('textbox');
+    const button = screen.getByRole('button', { name: /add/i });
+    fireEvent.change(input, { target: { value: '1,2,3' } });
+    fireEvent.click(button);
+    expect(screen.getByText(/6/i)).toBeInTheDocument();
 });
+
+
+});
+

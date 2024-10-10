@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 .App {
   display: flex;
   justify-content: center;
@@ -17,11 +20,25 @@
 .calc_box {
   text-align: center;
   border: 1px solid #ccc; 
+  background-color:#fff;
   border-radius: 8px;
-  width: 30%;
+  width: 50%;
   height: 30%;
   padding: 20px;
 }
 .input_box{
-  width:80%
+  margin-top: 20px;
+  width:90%;
+  height: 30px;
+  border-radius: 5px;
+}
+.input_err{
+  color: red; /* Error message color */
+  font-size: 12px; /* Adjust font size if needed */
+}
+.add_btn{
+  margin: 20px 0px 0px 0px;
+  width: 60%;
+  height: 30px;
+  cursor: pointer;
 }
