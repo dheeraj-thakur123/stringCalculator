@@ -9,6 +9,8 @@ function App() {
     //base case user input is empty
     if(userInput==''){
       setResult(0)
+    }else{
+      
     }
   }
 
@@ -17,7 +19,6 @@ function App() {
      <div className='calc_box'>
      <h2 className='calc_heading'>String - Calculator</h2>
       <div className='calc_input'>
-       
         <div className='calc_result'>{result}</div>
         <hr/>
         <div className=''>
