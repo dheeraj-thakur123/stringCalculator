@@ -73,6 +73,31 @@ test('case-5 displays error message when user enters all chracters', () => {
   expect(screen.getByText(/Invalid input: a, b, c/i)).toBeInTheDocument();
 });
 
+test('case-6 displays sum when user enters new lines between numbers', () => {
+  render(<App />);
+  
+  const input = screen.getByRole('textbox');
+  const button = screen.getByRole('button', { name: /add/i });
+
+  fireEvent.change(input, { target: { value: '1\\n2,3' } });
+  fireEvent.click(button);
+
+  expect(screen.getByText(/6/i)).toBeInTheDocument();
+});
+
+test('case-7 displays sum when user enters diffrent delimeters', () => {
+  render(<App />);
+  
+  const input = screen.getByRole('textbox');
+  const button = screen.getByRole('button', { name: /add/i });
+
+  fireEvent.change(input, { target: { value: "//;\n1;2" } });
+  fireEvent.click(button);
+
+  expect(screen.getByText(/3/i)).toBeInTheDocument();
+});
+
+
 
 });
 
